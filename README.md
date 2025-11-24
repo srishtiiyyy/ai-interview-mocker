@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Interview Mocker – AI Mock Interview Platform
 
-## Getting Started
+Interview Mocker is an AI-powered mock interview web application built using Next.js, Clerk Authentication, TailwindCSS, Shadcn UI, and OpenAI/Anthropic.
+It allows users to simulate real interview environments, answer questions, get instant AI feedback, and track their progress.
 
-First, run the development server:
+🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🔐 Secure authentication with Clerk
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🤖 AI-generated interview questions based on role & experience
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+🧠 Instant feedback and evaluation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🎤 Optional voice-based questions/answers
 
-## Learn More
+📊 Dashboard to view previous interviews
 
-To learn more about Next.js, take a look at the following resources:
+🎨 Modern UI using Tailwind + Shadcn
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+⚡ Blazing fast performance (Next.js App Router)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🛠️ Tech Stack
+Component	Tech
+Frontend	Next.js 14+, React
+Styling	TailwindCSS, Shadcn UI
+Auth	Clerk
+AI Models	OpenAI / Anthropic
+Database	Prisma / Supabase / MongoDB (your choice)
+Deployment	Vercel
+📁 Project Structure
+interview-mocker/
+│
+├── app/
+│   ├── (auth)/
+│   │   ├── sign-in/
+│   │   ├── sign-up/
+│   ├── dashboard/
+│   ├── interview/
+│   ├── api/
+│   │   └── generate/
+│   │       └── route.js
+│   └── layout.js
+│
+├── components/
+│   ├── ui/
+│   ├── navbar.jsx
+│   └── interview-card.jsx
+│
+├── lib/
+│   ├── openai.js
+│   ├── auth.js
+│   └── utils.js
+│
+├── styles/
+│   └── globals.css
+│
+├── public/
+├── middleware.js
+├── tailwind.config.js
+├── package.json
+└── README.md
 
-## Deploy on Vercel
+⚙️ Environment Variables
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Create a .env.local file:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+
+OPENAI_API_KEY=your_openai_api_key    # if using OpenAI
+ANTHROPIC_API_KEY=your_anthropic_key  # if using Claude
+
+DATABASE_URL=your_database_url (optional)
